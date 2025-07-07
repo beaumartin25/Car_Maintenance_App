@@ -9,6 +9,7 @@ namespace Car_Maintenance_App
     /// </summary>
     public partial class App : Application
     {
+        public static int UserID = 0;
     }
 
 }
