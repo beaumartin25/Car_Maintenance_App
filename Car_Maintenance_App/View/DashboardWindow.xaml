@@ -6,11 +6,27 @@
         xmlns:local="clr-namespace:Car_Maintenance_App.View"
         mc:Ignorable="d"
         Title="DashboardWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="New Car"/>
             </MenuItem>
         </Menu>
-    </Grid>
+        <DataGrid ItemsSource="{Binding CarsNeedingService}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Make" Binding="{Binding Make}" />
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" />
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
+                <DataGridTextColumn Header="Mileage" Binding="{Binding Mileage}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Service.Status}" />
+                <DataGridTemplateColumn Header="Actions">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Details" Command="{Binding DataContext.ShowDetailsCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </Window>
