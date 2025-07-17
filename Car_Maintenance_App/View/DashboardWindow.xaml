@@ -4,12 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Car_Maintenance_App.View"
+        xmlns:vm="clr-namespace:Car_Maintenance_App.ViewModel"
         mc:Ignorable="d"
         Title="DashboardWindow" Height="450" Width="800">
-    <DockPanel>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <vm:DashboardVM x:Key="vm"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel DataContext="{StaticResource vm}">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New Car"/>
+                <MenuItem x:Name="newCarMenuItem" Header="New Car" Click="newCarMenuItem_Click"/>
             </MenuItem>
         </Menu>
         <DataGrid ItemsSource="{Binding CarsNeedingService}" AutoGenerateColumns="False" CanUserAddRows="False">
@@ -18,7 +26,7 @@
                 <DataGridTextColumn Header="Model" Binding="{Binding Model}" />
                 <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
                 <DataGridTextColumn Header="Mileage" Binding="{Binding Mileage}" />
-                <DataGridTextColumn Header="Status" Binding="{Binding Service.Status}" />
+                <!--<DataGridTextColumn Header="Status" Binding="{Binding Service.Status}" /> -->
                 <DataGridTemplateColumn Header="Actions">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
