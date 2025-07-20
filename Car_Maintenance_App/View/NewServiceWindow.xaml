@@ -1,4 +1,4 @@
-﻿<Window x:Class="Car_Maintenance_App.View.NewCarWindow"
+﻿<Window x:Class="Car_Maintenance_App.View.NewServiceWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Car_Maintenance_App.View"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        Title="NewCarWindow" Height="400" Width="300">
+        Title="NewServiceWindow" Height="300" Width="350">
     
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -17,21 +17,17 @@
         <StackPanel>
             <TextBlock>VIN</TextBlock>
             <TextBox x:Name="vinBox" Margin="0,5"/>
-            <TextBlock>LicensePlate</TextBlock>
-            <TextBox x:Name="licensePlateBox" Margin="0,5"/>
-            <TextBlock>Make</TextBlock>
-            <TextBox x:Name="makeBox" Margin="0,5"/>
-            <TextBlock>Model</TextBlock>
-            <TextBox x:Name="modelBox" Margin="0,5"/>
-            <TextBlock>Color</TextBlock>
-            <TextBox x:Name="colorBox" Margin="0,5"/>
-            <TextBlock>Year</TextBlock>
-            <TextBox x:Name="yearBox" Margin="0,5"/>
-            <TextBlock>Mileage</TextBlock>
-            <TextBox x:Name="mileageBox" Margin="0,5"/>
+            <TextBlock>ServiceType</TextBlock>
+            <ComboBox x:Name="ServiceTypeComboBox" Margin="0,5" Loaded="ServiceTypeComboBox_Loaded"/>
+            <TextBlock>Description</TextBlock>
+            <TextBox x:Name="DescriptionBox" Height="70"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto"
+                     Margin="0,5"/>
         </StackPanel>
 
         <Button Grid.Row="1" Content="Save" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                Margin="10" Click="save_Click"/>
+            Margin="10" Click="save_Click"/>
     </Grid>
 </Window>

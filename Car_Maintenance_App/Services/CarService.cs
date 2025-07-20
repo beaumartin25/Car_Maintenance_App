@@ -60,7 +60,7 @@ namespace Car_Maintenance_App.Services
         {
             var allCars = DatabaseHelper.Read<Car>().ToList();
             var incompleteServices = DatabaseHelper.Read<Service>()
-                                                   .Where(s => s.Status != "Completed")
+                                                   .Where(s => s.Status != ServiceStatus.Completed)
                                                    .ToList();
 
             var needingService = from service in incompleteServices
@@ -68,6 +68,11 @@ namespace Car_Maintenance_App.Services
                                  select car;
 
             return needingService.Distinct().ToList();
+        }
+
+        public static Car GetCarByVin(string vin)
+        {
+            return DatabaseHelper.Read<Car>().FirstOrDefault(c => c.VIN == vin);
         }
     }
 }

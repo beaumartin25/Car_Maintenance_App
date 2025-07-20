@@ -18,6 +18,7 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem x:Name="newCarMenuItem" Header="New Car" Click="newCarMenuItem_Click"/>
+                <MenuItem x:Name="newServiceMenuItem" Header="New Service" Click="newServiceMenuItem_Click"/>
             </MenuItem>
         </Menu>
         <DataGrid ItemsSource="{Binding CarsNeedingService}" AutoGenerateColumns="False" CanUserAddRows="False">

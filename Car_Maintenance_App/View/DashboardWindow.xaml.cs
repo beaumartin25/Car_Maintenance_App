@@ -30,5 +30,12 @@ namespace Car_Maintenance_App.View
             newCarWindow.Owner = this;
             newCarWindow.ShowDialog();
         }
+
+        private void newServiceMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            NewServiceWindow newServiceWindow = new NewServiceWindow();
+            newServiceWindow.Owner = this;
+            newServiceWindow.ShowDialog();
+        }
     }
 }
