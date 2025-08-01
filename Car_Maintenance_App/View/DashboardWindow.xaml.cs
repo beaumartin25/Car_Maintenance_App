@@ -1,4 +1,5 @@
-﻿using Car_Maintenance_App.ViewModel;
+﻿using Car_Maintenance_App.Model;
+using Car_Maintenance_App.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,16 @@ namespace Car_Maintenance_App.View
             NewServiceWindow newServiceWindow = new NewServiceWindow();
             newServiceWindow.Owner = this;
             newServiceWindow.ShowDialog();
+        }
+
+        private void detailsButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var car = button?.DataContext as Car;
+            if (car == null) return;
+
+            CarDetailWindow detailWindow = new CarDetailWindow(car);
+            bool? result = detailWindow.ShowDialog();
         }
     }
 }

@@ -1,0 +1,39 @@
+﻿<Window x:Class="Car_Maintenance_App.View.CarDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Car_Maintenance_App.View"
+        mc:Ignorable="d"
+        Title="CarDetailWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Car Details" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Make:"/>
+            <TextBlock Text="{Binding Car.Make}" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Model:"/>
+            <TextBlock Text="{Binding Car.Model}" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Year:"/>
+            <TextBlock Text="{Binding Car.Year}" Margin="0,0,0,10"/>
+
+            <TextBlock Text="VIN:"/>
+            <TextBlock Text="{Binding Car.VIN}" Margin="0,0,0,10"/>
+
+            <TextBlock Text="License Plate:"/>
+            <TextBlock Text="{Binding Car.LicensePlate}" Margin="0,0,0,10"/>
+
+
+            <TextBlock Text="Services:" FontWeight="Bold" Margin="0,10,0,5"/>
+            <ListBox ItemsSource="{Binding Services}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Type}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>
