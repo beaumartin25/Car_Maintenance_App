@@ -22,12 +22,13 @@ namespace Car_Maintenance_App.Services
                 Color = color,
                 Year = year,
                 Mileage = mileage,
+                Status = CarStatus.Available, // Assuming a default status
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now
             };
             DatabaseHelper.Insert(newCar);
         }
-        public static void UpdateCar(int id, string vin, string licensePlate, string make, string model, string color, int year, int mileage)
+        public static void UpdateCar(int id, string vin, string licensePlate, string make, string model, string color, int year, int mileage, CarStatus status)
         {
             // Logic to update an existing car record
             Car carToUpdate = new Car
@@ -40,6 +41,7 @@ namespace Car_Maintenance_App.Services
                 Color = color,
                 Year = year,
                 Mileage = mileage,
+                Status = status,
                 UpdatedAt = DateTime.Now
             };
 
@@ -58,14 +60,9 @@ namespace Car_Maintenance_App.Services
 
         public static List<Car> GetCarsNeedingService()
         {
-            var allCars = DatabaseHelper.Read<Car>().ToList();
-            var incompleteServices = DatabaseHelper.Read<Service>()
-                                                   .Where(s => s.Status != ServiceStatus.Completed)
+            var needingService = DatabaseHelper.Read<Car>()
+                                                   .Where(s => s.Status != CarStatus.NeedingService)
                                                    .ToList();
-
-            var needingService = from service in incompleteServices
-                                 join car in allCars on service.CarId equals car.Id
-                                 select car;
 
             return needingService.Distinct().ToList();
         }

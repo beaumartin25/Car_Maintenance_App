@@ -22,4 +22,13 @@ namespace Car_Maintenance_App.Model
         EngineTuneUp,
         Other
     }
+
+    public enum CarStatus
+    {
+        Available,
+        NeedingService,
+        InService,
+        Completed,
+        Cancelled
+    }
 }

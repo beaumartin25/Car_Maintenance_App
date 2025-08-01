@@ -19,6 +19,7 @@ namespace Car_Maintenance_App.Model
         public string Color { get; set; }
         public int Year { get; set; }
         public int Mileage { get; set; }
+        public CarStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }

@@ -27,7 +27,7 @@
                 <DataGridTextColumn Header="Model" Binding="{Binding Model}" />
                 <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
                 <DataGridTextColumn Header="Mileage" Binding="{Binding Mileage}" />
-                <!--<DataGridTextColumn Header="Status" Binding="{Binding Service.Status}" /> -->
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
                 <DataGridTemplateColumn Header="Actions">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
