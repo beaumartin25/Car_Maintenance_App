@@ -28,7 +28,6 @@ namespace Car_Maintenance_App.Model
         Available,
         NeedingService,
         InService,
-        Completed,
-        Cancelled
+        Retired
     }
 }

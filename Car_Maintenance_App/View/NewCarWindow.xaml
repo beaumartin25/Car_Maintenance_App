@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Car_Maintenance_App.View"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        Title="NewCarWindow" Height="400" Width="300">
+        Title="NewCarWindow" Height="450" Width="300">
     
     <Grid Margin="10">
         <Grid.RowDefinitions>

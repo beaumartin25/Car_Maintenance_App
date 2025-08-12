@@ -5,27 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Car_Maintenance_App.View"
         mc:Ignorable="d"
-        Title="CarDetailWindow" Height="450" Width="800">
-    <Grid>
+        Title="CarDetailWindow" Height="650" Width="500">
+    <Grid Margin="10">
         <StackPanel>
             <TextBlock Text="Car Details" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
 
             <TextBlock Text="Make:"/>
-            <TextBlock Text="{Binding Car.Make}" Margin="0,0,0,10"/>
+            <TextBox Text="{Binding Car.Make, UpdateSourceTrigger=LostFocus}" Margin="0,0,0,10"/>
 
             <TextBlock Text="Model:"/>
-            <TextBlock Text="{Binding Car.Model}" Margin="0,0,0,10"/>
+            <TextBox Text="{Binding Car.Model, UpdateSourceTrigger=LostFocus}" Margin="0,0,0,10"/>
 
             <TextBlock Text="Year:"/>
-            <TextBlock Text="{Binding Car.Year}" Margin="0,0,0,10"/>
+            <TextBox Text="{Binding Car.Year, UpdateSourceTrigger=LostFocus}" Margin="0,0,0,10"/>
 
             <TextBlock Text="VIN:"/>
-            <TextBlock Text="{Binding Car.VIN}" Margin="0,0,0,10"/>
+            <TextBox Text="{Binding Car.VIN, UpdateSourceTrigger=LostFocus}" Margin="0,0,0,10"/>
 
             <TextBlock Text="License Plate:"/>
-            <TextBlock Text="{Binding Car.LicensePlate}" Margin="0,0,0,10"/>
+            <TextBox Text="{Binding Car.LicensePlate, UpdateSourceTrigger=LostFocus}" Margin="0,0,0,10"/>
 
+            <TextBlock Text="Color:"/>
+            <TextBox Text="{Binding Car.Color, UpdateSourceTrigger=LostFocus}" Margin="0,0,0,10"/>
 
+            <TextBlock Text="Mileage:"/>
+            <TextBox Text="{Binding Car.Mileage, UpdateSourceTrigger=LostFocus}" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Status:"/>
+            <ComboBox ItemsSource="{Binding StatusOptions}"
+                      SelectedItem="{Binding Car.Status, UpdateSourceTrigger=LostFocus}"
+                      Margin="0,0,0,10"/>
+            <Button Content="Update"
+                    Command="{Binding UpdateCarCommand}"
+                    Width="100"
+                    Margin="0,10,0,0" />
             <TextBlock Text="Services:" FontWeight="Bold" Margin="0,10,0,5"/>
             <ListBox ItemsSource="{Binding Services}">
                 <ListBox.ItemTemplate>
