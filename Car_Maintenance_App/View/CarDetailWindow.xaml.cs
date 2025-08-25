@@ -26,5 +26,10 @@ namespace Car_Maintenance_App.View
             InitializeComponent();
             DataContext = new CarDetailVM(car);
         }
+
+        private void detailsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

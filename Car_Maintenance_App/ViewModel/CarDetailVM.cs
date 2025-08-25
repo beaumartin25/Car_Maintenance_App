@@ -24,7 +24,7 @@ namespace Car_Maintenance_App.ViewModel
 
         public CarDetailVM(Car car)
         {
-            Car = car;
+            Car = car; // there is an issue with two way binding becuase when we make any changes to and don't save them they still show up on the data object but not in the database
             Services = DatabaseHelper.Read<Service>().Where(s => s.CarId == car.Id).ToList();
 
             UpdateCarCommand = new UpdateCarCommand(this);
