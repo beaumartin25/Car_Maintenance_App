@@ -25,5 +25,21 @@ namespace Car_Maintenance_App.Services
             };
             DatabaseHelper.Insert(newService);
         }
+
+        public static void UpdateService(int serviceId, int carId, int userId, ServiceStatus status, ServiceType type, string description, DateTime serviceDate)
+        {
+            Service serviceToUpdate = new Service
+            {
+                Id = serviceId,
+                CarId = carId,
+                UserId = userId,
+                Status = status,
+                Type = type,
+                Description = description,
+                ServiceDate = serviceDate,
+                UpdatedAt = DateTime.Now
+            };
+            DatabaseHelper.Update(serviceToUpdate);
+        }
     }
 }

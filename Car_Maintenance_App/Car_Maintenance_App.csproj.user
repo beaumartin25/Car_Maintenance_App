@@ -10,6 +10,9 @@
     <Compile Update="View\CarDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\CarServiceWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\DashboardWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\CarDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CarServiceWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\DashboardWindow.xaml">
