@@ -10,7 +10,7 @@
     <Compile Update="View\CarDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\CarServiceWindow.xaml.cs">
+    <Compile Update="View\ServiceDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\DashboardWindow.xaml.cs">
@@ -33,7 +33,7 @@
     <Page Update="View\CarDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\CarServiceWindow.xaml">
+    <Page Update="View\ServiceDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\DashboardWindow.xaml">

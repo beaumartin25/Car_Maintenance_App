@@ -1,5 +1,6 @@
 ﻿using Car_Maintenance_App.Model;
 using Car_Maintenance_App.Services;
+using Car_Maintenance_App.ViewModel.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,13 @@ namespace Car_Maintenance_App.ViewModel
 
         public ServiceStatus Status { get; set; }
 
+        public UpdateServiceCommand UpdateServiceCommand { get; set; }
+
         public ServiceDetailVM(Service service)
         {
             Service = service;
+
+            UpdateServiceCommand = new UpdateServiceCommand(this);
 
         }
 

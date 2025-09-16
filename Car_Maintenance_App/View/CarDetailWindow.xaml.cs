@@ -29,7 +29,12 @@ namespace Car_Maintenance_App.View
 
         private void detailsButton_Click(object sender, RoutedEventArgs e)
         {
+            var button = sender as Button;
+            var service = button?.DataContext as Service;
+            if (service == null) return;
 
+            ServiceDetailWindow detailWindow = new ServiceDetailWindow(service);
+            bool? result = detailWindow.ShowDialog();
         }
     }
 }

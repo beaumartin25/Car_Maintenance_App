@@ -1,15 +1,16 @@
-﻿<Window x:Class="Car_Maintenance_App.View.CarServiceWindow"
+﻿<Window x:Class="Car_Maintenance_App.View.ServiceDetailWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Car_Maintenance_App.View"
         mc:Ignorable="d"
-        Title="CarServiceWindow" Height="300" Width="150">
+        Title="ServiceDetailWindow" Height="300" Width="150">
     <Grid>
         <StackPanel>
             <TextBlock Text="Service Details" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
-            <TextBox></TextBox>
+            <TextBlock Text="Service Type:"/>
+            <TextBox Text="{Binding Service.Type}" Margin="0,0,0,10"/>
         </StackPanel>
     </Grid>
 </Window>

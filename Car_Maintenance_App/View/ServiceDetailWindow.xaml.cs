@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Car_Maintenance_App.Model;
+using Car_Maintenance_App.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +19,12 @@ namespace Car_Maintenance_App.View
     /// <summary>
     /// Interaction logic for CarServiceWindow.xaml
     /// </summary>
-    public partial class CarServiceWindow : Window
+    public partial class ServiceDetailWindow : Window
     {
-        public CarServiceWindow()
+        public ServiceDetailWindow(Service service)
         {
             InitializeComponent();
+            DataContext = new ServiceDetailVM(service);
         }
     }
 }
