@@ -13,6 +13,8 @@ namespace Car_Maintenance_App.ViewModel
     {
         public Service Service { get; set; }
 
+        public List<Note> Notes { get; set; }
+
         public List<ServiceStatus> StatusOptions { get; } =
             Enum.GetValues(typeof(ServiceStatus)).Cast<ServiceStatus>().ToList();
 

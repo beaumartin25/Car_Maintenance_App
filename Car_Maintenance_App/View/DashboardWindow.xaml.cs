@@ -27,14 +27,22 @@ namespace Car_Maintenance_App.View
         }
         private void newCarMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            NewCarWindow newCarWindow = new NewCarWindow();
+            NewCarWindow newCarWindow = new NewCarWindow()
+            {
+                Owner = Window.GetWindow(this),
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
             newCarWindow.Owner = this;
             newCarWindow.ShowDialog();
         }
 
         private void newServiceMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            NewServiceWindow newServiceWindow = new NewServiceWindow();
+            NewServiceWindow newServiceWindow = new NewServiceWindow()
+            {
+                Owner = Window.GetWindow(this),
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
             newServiceWindow.Owner = this;
             newServiceWindow.ShowDialog();
         }
@@ -45,8 +53,12 @@ namespace Car_Maintenance_App.View
             var car = button?.DataContext as Car;
             if (car == null) return;
 
-            CarDetailWindow detailWindow = new CarDetailWindow(car);
-            bool? result = detailWindow.ShowDialog();
+            CarDetailWindow carDetailWindow = new CarDetailWindow(car)
+            {
+                Owner = Window.GetWindow(this),
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
+            bool? result = carDetailWindow.ShowDialog();
         }
     }
 }

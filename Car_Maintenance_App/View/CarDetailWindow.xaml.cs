@@ -33,8 +33,12 @@ namespace Car_Maintenance_App.View
             var service = button?.DataContext as Service;
             if (service == null) return;
 
-            ServiceDetailWindow detailWindow = new ServiceDetailWindow(service);
-            bool? result = detailWindow.ShowDialog();
+            ServiceDetailWindow serviceDetailWindow = new ServiceDetailWindow(service) 
+            {
+                Owner = Window.GetWindow(this),
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
+            bool? result = serviceDetailWindow.ShowDialog();
         }
     }
 }

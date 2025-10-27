@@ -5,12 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Car_Maintenance_App.View"
         mc:Ignorable="d"
-        Title="ServiceDetailWindow" Height="300" Width="150">
-    <Grid>
+        Title="ServiceDetailWindow" Height="300" Width="200">
+    <Grid Margin="10">
         <StackPanel>
             <TextBlock Text="Service Details" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
             <TextBlock Text="Service Type:"/>
             <TextBox Text="{Binding Service.Type}" Margin="0,0,0,10"/>
+            <TextBlock Text="Service Status:"/>
+            <TextBox Text="{Binding Service.Status}" Margin="0,0,0,10"/>
+            <TextBlock Text="Notes:" FontWeight="Bold" Margin="0,10,0,5"/>
+            <ItemsControl ItemsSource="{Binding Notes}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,0,0,5"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </StackPanel>
     </Grid>
 </Window>
