@@ -18,6 +18,9 @@ namespace Car_Maintenance_App.ViewModel
         public List<ServiceStatus> StatusOptions { get; } =
             Enum.GetValues(typeof(ServiceStatus)).Cast<ServiceStatus>().ToList();
 
+        public List<ServiceType> ServiceTypes { get; } =
+            Enum.GetValues(typeof(ServiceType)).Cast<ServiceType>().ToList();
+
         public ServiceStatus Status { get; set; }
 
         public UpdateServiceCommand UpdateServiceCommand { get; set; }

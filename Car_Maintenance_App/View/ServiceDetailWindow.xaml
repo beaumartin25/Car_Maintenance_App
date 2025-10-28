@@ -10,9 +10,17 @@
         <StackPanel>
             <TextBlock Text="Service Details" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
             <TextBlock Text="Service Type:"/>
-            <TextBox Text="{Binding Service.Type}" Margin="0,0,0,10"/>
+            <ComboBox ItemsSource="{Binding ServiceTypes}"
+                      SelectedItem="{Binding Service.Type, UpdateSourceTrigger=LostFocus}"
+                      Margin="0,0,0,10"/>
             <TextBlock Text="Service Status:"/>
-            <TextBox Text="{Binding Service.Status}" Margin="0,0,0,10"/>
+            <ComboBox ItemsSource="{Binding StatusOptions}"
+                      SelectedItem="{Binding Service.Status, UpdateSourceTrigger=LostFocus}"
+                      Margin="0,0,0,10"/>
+            <Button Content="Update"
+                    Command="{Binding UpdateServiceCommand}"
+                    Width="100"
+                    Margin="0,10,0,0" />
             <TextBlock Text="Notes:" FontWeight="Bold" Margin="0,10,0,5"/>
             <ItemsControl ItemsSource="{Binding Notes}">
                 <ItemsControl.ItemTemplate>
