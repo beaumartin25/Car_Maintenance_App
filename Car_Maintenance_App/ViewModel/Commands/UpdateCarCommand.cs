@@ -9,10 +9,10 @@ namespace Car_Maintenance_App.ViewModel.Commands
 {
     public class UpdateCarCommand : ICommand
     {
-        public CarDetailVM VM { get; set; }
+        public DashboardVM VM { get; set; }
         public event EventHandler? CanExecuteChanged;
         // Constructor
-        public UpdateCarCommand(CarDetailVM vm)
+        public UpdateCarCommand(DashboardVM vm)
         {
             VM = vm;
         }

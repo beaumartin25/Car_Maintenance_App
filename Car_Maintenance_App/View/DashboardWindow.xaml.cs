@@ -50,15 +50,15 @@ namespace Car_Maintenance_App.View
         private void detailsButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var car = button?.DataContext as Car;
-            if (car == null) return;
+            var service = button?.DataContext as Service;
+            if (service == null) return;
 
-            CarDetailWindow carDetailWindow = new CarDetailWindow(car)
+            ServiceDetailWindow serviceDetailWindow = new ServiceDetailWindow(service)
             {
                 Owner = Window.GetWindow(this),
                 WindowStartupLocation = WindowStartupLocation.CenterOwner
             };
-            bool? result = carDetailWindow.ShowDialog();
+            bool? result = serviceDetailWindow.ShowDialog();
         }
     }
 }
